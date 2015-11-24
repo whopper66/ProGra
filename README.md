@@ -18,4 +18,11 @@
 * nazwy plików tylko małymi literami
 * rozszerzenia: ```.cpp```, ```.h```
 * używamy C++11
-* kolejność metod/pól w klasach: TODO
+* kolejność metod/pól w klasach:
+  1. pola prywatne
+  2. metody prywatne
+  3. pola protected
+  4. metody protected
+  5. pola publiczne
+  6. metody publiczne
+  7. friendsy
