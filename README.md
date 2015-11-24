@@ -13,7 +13,7 @@
 * używamy tabów
 * referencja: ```void fun(std::vector<int> &v) {}``` (analogicznie wskaźniki)
 * spacje wokół operatorów: wokół ```=``` zawsze, wokół logicznych zawsze, wokół matematycznych według uznania (tj. gdy linia jest na tyle długa, że bez spacji jest nieczytelna)
-* nazwy prywatnych pól: ```int _prywatnePole; int prywatnePole() const;```
+* nazwy prywatnych pól: ```int prywatnePole; int getPrywatnePole() const; void setPrywatnePole(...)```
 * stałe: ```const int STALA;```
 * nazwy plików tylko małymi literami
 * rozszerzenia: ```.cpp```, ```.h```
