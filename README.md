@@ -1,7 +1,10 @@
 # ProGra
-[Google Doc](https://docs.google.com/document/d/1mF6u4E5NlxBzFoVMOM2VQe-eOsI0KHf4dXwzc09M2xI/edit?ts=565215d7)
 
-# Code Style
+[Google Doc - ustalone](https://docs.google.com/document/d/1-7p8uat43BIQSMBS6p3YnF66Qh-GhjP_nV391s7aiPw/edit)
+[Google Doc - pomysły](https://docs.google.com/document/d/1mF6u4E5NlxBzFoVMOM2VQe-eOsI0KHf4dXwzc09M2xI/edit)
+(powyższe dokumenty są z założenia dostępne tylko dla członków zespołu robiącego grę)
+
+# Code style
 * klamry:
   
   ```cpp
