@@ -4,6 +4,8 @@
 
 [Google Doc - pomysły](https://docs.google.com/document/d/1mF6u4E5NlxBzFoVMOM2VQe-eOsI0KHf4dXwzc09M2xI/edit)
 
+[Google Doc - struktura kodu](https://docs.google.com/document/d/1G56MfaZjGgL5vOLXdGAiYmboU6snzvb_4MohQrkF1xs/edit)
+
 (powyższe dokumenty są z założenia dostępne tylko dla członków zespołu robiącego grę)
 
 # Code style
