@@ -7,8 +7,11 @@ TEMPLATE = app
 CONFIG += c++11
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    openglwidget.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    openglwidget.h
 
-FORMS    +=
+FORMS    += \
+    mainwindow.ui

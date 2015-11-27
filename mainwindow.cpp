@@ -1,9 +1,22 @@
 #include "mainwindow.h"
+#include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
-	: QMainWindow(parent) {
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow) {
+
+    ui->setupUi(this);
+
+    openGLWidget = new OpenGLWidget(this);
+    openGLWidget->lower();
+
 }
 
-MainWindow::~MainWindow() {
+void MainWindow::resizeEvent(QResizeEvent *event) {
+    openGLWidget->setGeometry(this->geometry());
+}
 
+MainWindow::~MainWindow()
+{
+    delete ui;
 }
