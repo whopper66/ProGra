@@ -8,10 +8,14 @@ CONFIG += c++11
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    openglwidget.cpp
+    openglwidget.cpp \
+    gameplay.cpp \
+    number.cpp
 
 HEADERS  += mainwindow.h \
-    openglwidget.h
+    openglwidget.h \
+    gameplay.h \
+    number.h
 
 FORMS    += \
     mainwindow.ui

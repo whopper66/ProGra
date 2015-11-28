@@ -16,7 +16,7 @@ void MainWindow::resizeEvent(QResizeEvent *event) {
     openGLWidget->setGeometry(this->geometry());
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow(){
+
     delete ui;
 }

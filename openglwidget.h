@@ -1,17 +1,18 @@
 #ifndef OPENGLWIDGET_H
 #define OPENGLWIDGET_H
 
-#include <QDebug>
+#include "gameplay.h"
+
 #include <QOpenGLWidget>
 #include <QPainter>
-#include <QTimer>
 
 class OpenGLWidget : public QOpenGLWidget {
     Q_OBJECT
 
 private:
-    QTimer timer;
+    QTimer paintTimer;
     QPainter painter;
+    Gameplay * gameplay;
 
 private slots:
     void paintGL();

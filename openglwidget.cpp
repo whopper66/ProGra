@@ -3,9 +3,9 @@
 OpenGLWidget::OpenGLWidget(QWidget * parent, Qt::WindowFlags f) :
     QOpenGLWidget(parent) {
 
-    //ustawia rysowanie co 1 milisekundę (doda się jakiegoś VSynca, nie?)
-    timer.start(1);
-    connect(&timer, SIGNAL(timeout()), this, SLOT(paintGL()));
+    /* ustawia rysowanie co 1 milisekundę (doda się jakiegoś VSynca, nie?) */
+    paintTimer.start(1);
+    connect(&paintTimer, SIGNAL(timeout()), this, SLOT(paintGL()));
 
 }
 
@@ -15,6 +15,7 @@ void OpenGLWidget::paintGL() {
         painter.begin(this);
     }
 
+    /* nie ma czego rysować */
     painter.setBrush(Qt::red);
     painter.drawRect(0,0,10,200);
 }
