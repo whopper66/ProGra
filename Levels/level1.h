@@ -5,6 +5,9 @@
 
 class Level1 : Level {
 
+private:
+    void Initialize();
+
 public:
     Level1();
     Number nextNumber();

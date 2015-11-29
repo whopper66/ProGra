@@ -6,10 +6,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow) {
 
     ui->setupUi(this);
-
     openGLWidget = new OpenGLWidget(this);
     openGLWidget->lower();
-
 }
 
 void MainWindow::resizeEvent(QResizeEvent *event) {
@@ -19,4 +17,5 @@ void MainWindow::resizeEvent(QResizeEvent *event) {
 MainWindow::~MainWindow(){
 
     delete ui;
+    delete openGLWidget;
 }
