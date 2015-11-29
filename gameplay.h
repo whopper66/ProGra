@@ -1,7 +1,6 @@
 #ifndef GAMEPLAY_H
 #define GAMEPLAY_H
 
-#include "number.h"
 #include "level.h"
 
 #include <QTimer>

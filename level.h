@@ -1,12 +1,11 @@
 #ifndef LEVEL_H
 #define LEVEL_H
 
+#include "number.h"
 
 class Level {
-protected:
-    int max_sum;
-    int min_number;
-    int max_number;
+virtual Number nextNumber();
+
 public:
     Level();
 };
