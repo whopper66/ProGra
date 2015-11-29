@@ -11,13 +11,15 @@ SOURCES += main.cpp\
     openglwidget.cpp \
     gameplay.cpp \
     number.cpp \
-    level.cpp
+    level.cpp \
+    Levels/level1.cpp
 
 HEADERS  += mainwindow.h \
     openglwidget.h \
     gameplay.h \
     number.h \
-    level.h
+    level.h \
+    Levels/level1.h
 
 FORMS    += \
     mainwindow.ui

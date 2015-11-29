@@ -16,7 +16,8 @@ QPoint OpenGLWidget::stretchCoords(QVector2D point) const {
 }
 
 void OpenGLWidget::paintNumber(Number n) {
-    painter.drawText(stretchCoords(n.getPosition()), "DUPA");
+    painter.drawText(stretchCoords(n.getPosition()),
+                     std::to_string(n.getValue()));
 }
 
 void OpenGLWidget::paintGL() {

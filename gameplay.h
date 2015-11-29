@@ -1,7 +1,7 @@
 #ifndef GAMEPLAY_H
 #define GAMEPLAY_H
 
-#include "level.h"
+#include "Levels/level1.h"
 
 #include <QTimer>
 #include <QVector>
