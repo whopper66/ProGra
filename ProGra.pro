@@ -7,8 +7,19 @@ TEMPLATE = app
 CONFIG += c++11
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    openglwidget.cpp \
+    gameplay.cpp \
+    number.cpp \
+    level.cpp \
+    Levels/level1.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    openglwidget.h \
+    gameplay.h \
+    number.h \
+    level.h \
+    Levels/level1.h
 
-FORMS    +=
+FORMS    += \
+    mainwindow.ui
