@@ -16,6 +16,7 @@ private:
 public:
     int getValue() const;
     bool isSelected() const;
+    QVector2D getPosition() const;
 
     Number();
 };

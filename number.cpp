@@ -12,3 +12,6 @@ bool Number::isSelected() const {
     return selected;
 }
 
+QVector2D Number::getPosition() const {
+    return position;
+}

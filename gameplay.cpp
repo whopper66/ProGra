@@ -3,6 +3,9 @@
 Gameplay::Gameplay() {
 
     reachable = new bool[MAX_SUM];
+
+    currentLevel = new Level();
+
 }
 
 int Gameplay::findCorrectSum() {

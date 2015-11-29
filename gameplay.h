@@ -6,6 +6,8 @@
 #include <QTimer>
 #include <QVector>
 
+#include <QDebug>
+
 const int MAX_SUM = 16500;
 
 class Gameplay : private QObject {
@@ -34,7 +36,6 @@ private:
 protected:
 
 public:
-
     Gameplay();
 
 };

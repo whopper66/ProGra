@@ -4,7 +4,7 @@
 #include "number.h"
 
 class Level {
-virtual Number nextNumber();
+Number nextNumber();
 
 public:
     Level();
