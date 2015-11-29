@@ -14,7 +14,7 @@ class MainWindow : public QMainWindow {
 
 private:
     Ui::MainWindow *ui;
-    OpenGLWidget * openGLWidget;
+    OpenGLWidget *openGLWidget;
 
 protected:
     void resizeEvent(QResizeEvent * event);

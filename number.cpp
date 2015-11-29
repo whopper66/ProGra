@@ -4,3 +4,11 @@ Number::Number() {
 
 }
 
+int Number::getValue() const {
+    return value;
+}
+
+bool Number::isSelected() const {
+    return selected;
+}
+

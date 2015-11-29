@@ -12,7 +12,7 @@ class OpenGLWidget : public QOpenGLWidget {
 private:
     QTimer paintTimer;
     QPainter painter;
-    Gameplay * gameplay;
+    Gameplay *gameplay;
 
 private slots:
     void paintGL();

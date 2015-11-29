@@ -9,6 +9,9 @@ private:
     bool selected;
 
 public:
+    int getValue() const;
+    bool isSelected() const;
+
     Number();
 };
 
