@@ -17,11 +17,9 @@ QPoint OpenGLWidget::stretchCoords(QVector2D point) const {
 }
 
 void OpenGLWidget::paintNumber(Number n) {
-    int x = stretchCoords(n.getPosition()).rx();
-    int y = stretchCoords(n.getPosition()).ry();
-    int w = n.getValue();
-    int h = 10;
-    painter.drawRect(x, y, w, h);
+    QPoint position = stretchCoords(n.getPosition());
+    QString text = QString(std::to_string(n.getValue()).c_str());
+    painter.drawText(position, text);
 }
 
 void OpenGLWidget::paintGL() {
@@ -38,6 +36,7 @@ void OpenGLWidget::paintGL() {
         paintNumber(gameplay->getNthNumber(i));
     }
 
+    painter.end();
 }
 
 OpenGLWidget::~OpenGLWidget() {

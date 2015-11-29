@@ -19,6 +19,7 @@ public:
     QVector2D getPosition() const;
 
     Number();
+    Number(int value, QVector2D position);
 };
 
 #endif // NUMBER_H

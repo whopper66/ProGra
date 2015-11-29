@@ -7,9 +7,8 @@ Number::Number() :
     position = QVector2D(0.5f, 0.5f);
 }
 
-Number::Number(int value, bool selected, QVector2D position) {
+Number::Number(int value, QVector2D position) {
     this->value = value;
-    this->selected = selected;
     this->position = position;
 }
 

@@ -8,7 +8,7 @@ Gameplay::Gameplay() :
     currentLevel = new Level();
     numbers = QVector<Number>();
 
-    addNumber(Number());
+    addNumber(currentLevel->nextNumber());
 }
 
 int Gameplay::findCorrectSum() {

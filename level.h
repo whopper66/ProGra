@@ -8,9 +8,12 @@
 
 #include "number.h"
 
+#include <QVector>
+
 class Level {
 
 private:
+    QVector<Number> queue;
     void Initialize();
 
 public:
