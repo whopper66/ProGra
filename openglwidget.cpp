@@ -3,7 +3,8 @@
 OpenGLWidget::OpenGLWidget(QWidget * parent, Qt::WindowFlags f) :
     QOpenGLWidget(parent) {
 
-    /* ustawia rysowanie co 1 milisekundę (doda się jakiegoś VSynca, nie?) */
+    /* ustawia rysowanie co 1 milisekundę
+     * (doda się jakiegoś VSynca, nie?) */
     paintTimer.start(1);
     connect(&paintTimer, SIGNAL(timeout()), this, SLOT(paintGL()));
 
@@ -16,20 +17,26 @@ QPoint OpenGLWidget::stretchCoords(QVector2D point) const {
 }
 
 void OpenGLWidget::paintNumber(Number n) {
-    painter.drawText(stretchCoords(n.getPosition()),
-                     "TODO");
+    int x = stretchCoords(n.getPosition()).rx();
+    int y = stretchCoords(n.getPosition()).ry();
+    int w = n.getValue();
+    int h = 10;
+    painter.drawRect(x, y, w, h);
 }
 
 void OpenGLWidget::paintGL() {
-
     if (!painter.isActive()) {
         painter.begin(this);
     }
 
     /* nie ma czego rysować */
+    painter.setPen(Qt::white);
     painter.setBrush(Qt::red);
     painter.drawRect(0,0,10,200);
 
+    for (int i = 0; i < gameplay->getNumbersCount(); i++) {
+        paintNumber(gameplay->getNthNumber(i));
+    }
 
 }
 

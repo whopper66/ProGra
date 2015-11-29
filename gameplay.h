@@ -15,30 +15,28 @@ class Gameplay : private QObject {
 
 private:
     QTimer updateTimer;
-
     QVector<Number> numbers;
     int sumOfNumbers;
     /* do sprawdzania, które sumy są osiągalne */
-
     int correctSum;
     /* tyle, ile gracz powinien uzyskać, nie mam pomysłu
      * na lepszą nazwę */
-
     bool *reachable;
+    Level *currentLevel;
+
     void addNumber(Number n);
     int findCorrectSum();
     void initializeNumbers();
-
     void deleteSelectedNumbers();
 
-    Level *currentLevel;
 
 protected:
 
 public:
     Gameplay();
     ~Gameplay();
-
+    int getNumbersCount() const;
+    Number getNthNumber(int n) const;
 };
 
 #endif // GAMEPLAY_H

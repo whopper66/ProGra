@@ -5,6 +5,7 @@
 
 #include <QOpenGLWidget>
 #include <QPainter>
+#include <QFontDatabase>
 
 #include <QDebug>
 
