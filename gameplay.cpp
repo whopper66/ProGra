@@ -51,3 +51,8 @@ void Gameplay::deleteSelectedNumbers() {
 
     initializeNumbers();
 }
+
+Gameplay::~Gameplay() {
+    delete reachable;
+    delete currentLevel;
+}

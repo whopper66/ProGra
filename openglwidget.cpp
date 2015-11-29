@@ -17,7 +17,7 @@ QPoint OpenGLWidget::stretchCoords(QVector2D point) const {
 
 void OpenGLWidget::paintNumber(Number n) {
     painter.drawText(stretchCoords(n.getPosition()),
-                     std::to_string(n.getValue()));
+                     "TODO");
 }
 
 void OpenGLWidget::paintGL() {
@@ -31,4 +31,8 @@ void OpenGLWidget::paintGL() {
     painter.drawRect(0,0,10,200);
 
 
+}
+
+OpenGLWidget::~OpenGLWidget() {
+    delete gameplay;
 }

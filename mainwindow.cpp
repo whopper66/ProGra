@@ -19,4 +19,5 @@ void MainWindow::resizeEvent(QResizeEvent *event) {
 MainWindow::~MainWindow(){
 
     delete ui;
+    delete openGLWidget;
 }

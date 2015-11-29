@@ -27,6 +27,7 @@ private slots:
 
 public:
     OpenGLWidget(QWidget * parent = 0, Qt::WindowFlags f = 0);
+    ~OpenGLWidget();
 
 };
 

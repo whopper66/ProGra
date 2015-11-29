@@ -37,6 +37,7 @@ protected:
 
 public:
     Gameplay();
+    ~Gameplay();
 
 };
 
