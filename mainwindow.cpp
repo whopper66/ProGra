@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 
 void MainWindow::resizeEvent(QResizeEvent *event) {
-    openGLWidget->setGeometry(this->geometry());
+    openGLWidget->setGeometry(0, 0, this->width(), this->height());
 }
 
 MainWindow::~MainWindow(){

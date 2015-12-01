@@ -18,6 +18,7 @@ private:
 
 public:
     Number nextNumber();
+    int timeTillNextNumber();
     Level();
 };
 
