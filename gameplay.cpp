@@ -8,7 +8,17 @@ Gameplay::Gameplay() :
     currentLevel = new Level();
     numbers = QVector<Number>();
 
-    addNumber(currentLevel->nextNumber());
+    setNextNumberTimer();
+    connect(&nextNumberTimer, SIGNAL(timeout()), this, SLOT(addNumber()));
+}
+
+void Gameplay::setNextNumberTimer() {
+    int interval = currentLevel->timeTillNextNumber();
+
+    if (interval != -1) {
+        nextNumberTimer.setSingleShot(true);
+        nextNumberTimer.start(interval);
+    }
 }
 
 int Gameplay::findCorrectSum() {
@@ -23,7 +33,7 @@ int Gameplay::findCorrectSum() {
     }
 }
 
-void Gameplay::addNumber(Number n) {
+void Gameplay::pushNumber(Number n) {
     numbers.push_back(n);
 
     for (int i = sumOfNumbers; i >= 0; i--) {
@@ -33,12 +43,17 @@ void Gameplay::addNumber(Number n) {
     correctSum = findCorrectSum();
 }
 
+void Gameplay::addNumber() {
+    pushNumber(currentLevel->nextNumber());
+    setNextNumberTimer();
+}
+
 void Gameplay::initializeNumbers() {
     std::fill(reachable, reachable + MAX_SUM, false);
     sumOfNumbers = 0;
 
     for (Number n : numbers) {
-        addNumber(n);
+        pushNumber(n);
     }
 }
 

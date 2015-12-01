@@ -15,6 +15,8 @@ class Gameplay : private QObject {
 
 private:
     QTimer updateTimer;
+    QTimer nextNumberTimer;
+
     QVector<Number> numbers;
     int sumOfNumbers;
     /* do sprawdzania, które sumy są osiągalne */
@@ -24,13 +26,15 @@ private:
     bool *reachable;
     Level *currentLevel;
 
-    void addNumber(Number n);
     int findCorrectSum();
+    void pushNumber(Number n);
     void initializeNumbers();
     void deleteSelectedNumbers();
+    void setNextNumberTimer();
 
 
-protected:
+private slots:
+    void addNumber();
 
 public:
     Gameplay();

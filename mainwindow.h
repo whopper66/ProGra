@@ -4,6 +4,7 @@
 #include "openglwidget.h"
 
 #include <QMainWindow>
+#include <QTimer>
 
 namespace Ui {
 class MainWindow;

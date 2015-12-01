@@ -5,8 +5,9 @@ OpenGLWidget::OpenGLWidget(QWidget * parent, Qt::WindowFlags f) :
 
     /* ustawia rysowanie co 1 milisekundę
      * (doda się jakiegoś VSynca, nie?) */
-    paintTimer.start(1);
+    paintTimer.start(17);
     connect(&paintTimer, SIGNAL(timeout()), this, SLOT(paintGL()));
+    connect(&paintTimer, SIGNAL(timeout()), this, SLOT(update()));
 
     gameplay = new Gameplay();
 }
