@@ -4,10 +4,10 @@ Number::Number() :
     value(0),
     selected(false) {
 
-    position = QVector2D(0.5f, 0.5f);
+    position = QPointF(0.5f, 0.5f);
 }
 
-Number::Number(int value, QVector2D position) {
+Number::Number(int value, QPointF position) {
     this->value = value;
     this->position = position;
 }
@@ -20,6 +20,6 @@ bool Number::isSelected() const {
     return selected;
 }
 
-QVector2D Number::getPosition() const {
+QPointF Number::getPosition() const {
     return position;
 }

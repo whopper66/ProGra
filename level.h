@@ -13,13 +13,15 @@
 class Level {
 
 private:
-    QVector<Number> queue;
-    void Initialize();
+
+protected:
+    virtual void Initialize();
 
 public:
-    Number nextNumber();
-    int timeTillNextNumber();
+    virtual Number nextNumber();
+    virtual int timeTillNextNumber();
     Level();
+    virtual ~Level();
 };
 
 #endif // LEVEL_H

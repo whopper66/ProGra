@@ -17,7 +17,7 @@ private:
     QPainter painter;
     Gameplay *gameplay;
 
-    QPoint stretchCoords(QVector2D point) const;
+    QPoint stretchCoords(QPointF point) const;
     /* zamienia współrzędne z zakresu [0..1] na
      * proporcjonalne współrzędne z ekranu */
 
