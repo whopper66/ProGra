@@ -12,7 +12,7 @@ OpenGLWidget::OpenGLWidget(QWidget * parent, Qt::WindowFlags f) :
     gameplay = new Gameplay();
 }
 
-QPoint OpenGLWidget::stretchCoords(QVector2D point) const {
+QPoint OpenGLWidget::stretchCoords(QPointF point) const {
     return QPoint(point.x() * this->width(),
                   point.y() * this->height());
 }

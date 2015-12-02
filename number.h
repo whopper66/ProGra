@@ -2,24 +2,24 @@
 #define NUMBER_H
 
 #include <QPoint>
-#include <QVector2D>
+#include <QPointF>
 
 class Number {
 private:
     int value;
     bool selected;
 
-    QVector2D position;
+    QPointF position;
     /* pozycja numeru na ekranie, proponuję współrzędne z zakresu
      * [0..1] + skalowanie w funkcji rysującej */
 
 public:
     int getValue() const;
     bool isSelected() const;
-    QVector2D getPosition() const;
+    QPointF getPosition() const;
 
     Number();
-    Number(int value, QVector2D position);
+    Number(int value, QPointF position);
 };
 
 #endif // NUMBER_H
