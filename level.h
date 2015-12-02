@@ -21,6 +21,7 @@ public:
     virtual Number nextNumber();
     virtual int timeTillNextNumber();
     Level();
+    virtual ~Level();
 };
 
 #endif // LEVEL_H

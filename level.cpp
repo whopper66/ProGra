@@ -15,3 +15,7 @@ Number Level::nextNumber() {
 int Level::timeTillNextNumber() {
     return 250;
 }
+
+Level::~Level() {
+
+}
