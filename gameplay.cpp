@@ -5,7 +5,7 @@ Gameplay::Gameplay() :
     correctSum(-1) {
 
     reachable = new bool[MAX_SUM];
-    currentLevel = new Level();
+    currentLevel = new Level1();
     numbers = QVector<Number>();
 
     setNextNumberTimer();
