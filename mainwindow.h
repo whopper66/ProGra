@@ -28,4 +28,3 @@ public:
 };
 
 #endif // MAINWINDOW_H
-i

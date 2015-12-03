@@ -6,8 +6,8 @@
 class Level1 : public Level {
 
 private:
-    QVector<Number> queue;
-    void Initialize();
+	QVector<Number> queue;
+	void Initialize();
 
 public:
 	Level1();
