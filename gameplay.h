@@ -32,15 +32,16 @@ private:
     void deleteSelectedNumbers();
     void setNextNumberTimer();
 
-
 private slots:
     void addNumber();
 
 public:
     Gameplay();
     ~Gameplay();
+
     int getNumbersCount() const;
     Number getNthNumber(int n) const;
+    void handleUserClick(QPointF pos);
 };
 
 #endif // GAMEPLAY_H

@@ -17,6 +17,8 @@ public:
     int getValue() const;
     bool isSelected() const;
     QPointF getPosition() const;
+    void setSelected(bool selected);
+    void toggleSelected();
 
     Number();
     Number(int value, QPointF position);

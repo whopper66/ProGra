@@ -19,7 +19,8 @@ HEADERS  += mainwindow.h \
     gameplay.h \
     number.h \
     level.h \
-    Levels/level1.h
+    Levels/level1.h \
+    style.h
 
 FORMS    += \
     mainwindow.ui
