@@ -6,8 +6,8 @@
 #include <QBrush>
 
 namespace Style {
-    const QColor numberColor = Qt::white;
-    const QColor selectedNumberColor = Qt::red;
+	const QColor numberColor = Qt::white;
+	const QColor selectedNumberColor = Qt::red;
 }
 
 #endif // STYLE_H

@@ -9,7 +9,7 @@
 (powyższe dokumenty są z założenia dostępne tylko dla członków zespołu robiącego grę)
 
 # Code style
-* klamry:
+* klamry [K&R style (Stroustrup)](https://en.wikipedia.org/wiki/Indent_style#Variant:_Stroustrup)
   
   ```cpp
   int fun() {

@@ -10,9 +10,9 @@ private:
     void Initialize();
 
 public:
-    Level1();
-    Number nextNumber();
-    int timeTillNextNumber();
+	Level1();
+	Number nextNumber();
+	int timeTillNextNumber();
 };
 
 #endif // LEVEL1_H
