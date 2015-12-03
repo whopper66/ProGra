@@ -77,6 +77,16 @@ Number Gameplay::getNthNumber(int n) const {
     return numbers[n];
 }
 
+void Gameplay::handleUserClick(QPointF pos) {
+    for (Number &n : numbers) {
+        if ((n.getPosition() - pos).manhattanLength() < 0.1f) {
+            /* TODO: ładniejsze wykrywanie kliknięcia
+             * w numerek */
+            n.toggleSelected();
+        }
+    }
+}
+
 Gameplay::~Gameplay() {
     delete reachable;
     delete currentLevel;

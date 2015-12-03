@@ -2,10 +2,12 @@
 #define OPENGLWIDGET_H
 
 #include "gameplay.h"
+#include "style.h"
 
 #include <QOpenGLWidget>
 #include <QPainter>
 #include <QFontDatabase>
+#include <QMouseEvent>
 
 #include <QDebug>
 
@@ -21,6 +23,9 @@ private:
     /* zamienia współrzędne z zakresu [0..1] na
      * proporcjonalne współrzędne z ekranu */
 
+    QPointF squeezeCoords(QPoint point) const;
+    /* i odwrotnie */
+
     void paintNumber(Number n);
 
 private slots:
@@ -30,6 +35,7 @@ public:
     OpenGLWidget(QWidget * parent = 0, Qt::WindowFlags f = 0);
     ~OpenGLWidget();
 
+    void mousePressEvent(QMouseEvent *event);
 };
 
 #endif // OPENGLWIDGET_H

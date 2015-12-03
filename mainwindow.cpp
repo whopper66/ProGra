@@ -19,3 +19,7 @@ MainWindow::~MainWindow(){
     delete ui;
     delete openGLWidget;
 }
+
+void MainWindow::mousePressEvent(QMouseEvent *event) {
+    openGLWidget->mousePressEvent(event);
+}

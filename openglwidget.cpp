@@ -17,7 +17,19 @@ QPoint OpenGLWidget::stretchCoords(QPointF point) const {
                   point.y() * this->height());
 }
 
+QPointF OpenGLWidget::squeezeCoords(QPoint point) const {
+    return QPointF(qreal(point.x()) / qreal(this->width()),
+                   qreal(point.y()) / qreal(this->height()));
+}
+
 void OpenGLWidget::paintNumber(Number n) {
+    if (n.isSelected()) {
+        painter.setPen(Style::selectedNumberColor);
+    }
+    else {
+        painter.setPen(Style::numberColor);
+    }
+
     QPoint position = stretchCoords(n.getPosition());
     QString text = QString(std::to_string(n.getValue()).c_str());
     painter.drawText(position, text);
@@ -42,4 +54,10 @@ void OpenGLWidget::paintGL() {
 
 OpenGLWidget::~OpenGLWidget() {
     delete gameplay;
+}
+
+void OpenGLWidget::mousePressEvent(QMouseEvent *event) {
+    QPointF coords = squeezeCoords(event->pos());
+    qDebug() << coords;
+    gameplay->handleUserClick(coords);
 }

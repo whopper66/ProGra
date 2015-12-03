@@ -18,7 +18,8 @@ private:
     OpenGLWidget *openGLWidget;
 
 protected:
-    void resizeEvent(QResizeEvent * event);
+    void resizeEvent(QResizeEvent *event);
+    void mousePressEvent(QMouseEvent *event);
 
 public:
     explicit MainWindow(QWidget *parent = 0);
