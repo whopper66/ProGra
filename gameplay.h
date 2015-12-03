@@ -11,37 +11,37 @@
 const int MAX_SUM = 16500;
 
 class Gameplay : private QObject {
-    Q_OBJECT
+	Q_OBJECT
 
 private:
-    QTimer updateTimer;
-    QTimer nextNumberTimer;
+	QTimer updateTimer;
+	QTimer nextNumberTimer;
 
-    QVector<Number> numbers;
-    int sumOfNumbers;
-    /* do sprawdzania, które sumy są osiągalne */
-    int correctSum;
-    /* tyle, ile gracz powinien uzyskać, nie mam pomysłu
+	QVector<Number> numbers;
+	int sumOfNumbers;
+	/* do sprawdzania, które sumy są osiągalne */
+	int correctSum;
+	/* tyle, ile gracz powinien uzyskać, nie mam pomysłu
      * na lepszą nazwę */
-    bool *reachable;
-    Level *currentLevel;
+	bool *reachable;
+	Level *currentLevel;
 
-    int findCorrectSum();
-    void pushNumber(Number n);
-    void initializeNumbers();
-    void deleteSelectedNumbers();
-    void setNextNumberTimer();
+	int findCorrectSum();
+	void pushNumber(const Number &n);
+	void initializeNumbers();
+	void deleteSelectedNumbers();
+	void setNextNumberTimer();
 
 private slots:
-    void addNumber();
+	void addNumber();
 
 public:
-    Gameplay();
-    ~Gameplay();
+	Gameplay();
+	~Gameplay();
 
-    int getNumbersCount() const;
-    Number getNthNumber(int n) const;
-    void handleUserClick(QPointF pos);
+	int getNumbersCount() const;
+	Number getNthNumber(int n) const;
+	void handleUserClick(const QPointF &pos);
 };
 
 #endif // GAMEPLAY_H

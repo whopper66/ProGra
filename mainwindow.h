@@ -7,24 +7,25 @@
 #include <QTimer>
 
 namespace Ui {
-class MainWindow;
+	class MainWindow;
 }
 
 class MainWindow : public QMainWindow {
-    Q_OBJECT
+	Q_OBJECT
 
 private:
-    Ui::MainWindow *ui;
-    OpenGLWidget *openGLWidget;
+	Ui::MainWindow *ui;
+	OpenGLWidget *openGLWidget;
 
 protected:
-    void resizeEvent(QResizeEvent *event);
-    void mousePressEvent(QMouseEvent *event);
+	void resizeEvent(QResizeEvent *event);
+	void mousePressEvent(QMouseEvent *event);
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+	explicit MainWindow(QWidget *parent = nullptr);
+	~MainWindow();
 
 };
 
 #endif // MAINWINDOW_H
+i

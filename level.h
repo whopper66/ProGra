@@ -15,13 +15,13 @@ class Level {
 private:
 
 protected:
-    virtual void Initialize();
+	virtual void Initialize();
 
 public:
-    virtual Number nextNumber();
-    virtual int timeTillNextNumber();
-    Level();
-    virtual ~Level();
+	virtual Number nextNumber();
+	virtual int timeTillNextNumber();
+	Level();
+	virtual ~Level();
 };
 
 #endif // LEVEL_H
