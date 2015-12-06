@@ -22,6 +22,11 @@ public:
 	virtual int timeTillNextNumber();
 	Level();
 	virtual ~Level();
+
+    virtual bool completed();
+    /* UWAGA: można dodawać metody completed()
+     * różnymi zbiorami argumentów, a następnie
+     * w kodzie sprawdzać je po kolei */
 };
 
 #endif // LEVEL_H

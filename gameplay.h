@@ -26,6 +26,7 @@ private:
 	bool *reachable;
 	Level *currentLevel;
 
+    int sumOfSelected() const;
 	int findCorrectSum();
 	void pushNumber(const Number &n);
 	void initializeNumbers();
@@ -33,7 +34,8 @@ private:
 	void setNextNumberTimer();
 
 private slots:
-	void addNumber();
+    void addNumber();
+    void update();
 
 public:
 	Gameplay();
