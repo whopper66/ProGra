@@ -16,6 +16,10 @@ int Level::timeTillNextNumber() {
 	return 250;
 }
 
+bool Level::completed() {
+    return false;
+}
+
 Level::~Level() {
 
 }
