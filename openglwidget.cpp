@@ -3,8 +3,8 @@
 OpenGLWidget::OpenGLWidget(QWidget * parent, Qt::WindowFlags) :
 	QOpenGLWidget(parent) {
 
-    /* ustawia rysowanie co 17 milisekund
-     * (doda się jakiegoś VSynca, nie?) */
+	/* ustawia rysowanie co 17 milisekund
+	* (doda się jakiegoś VSynca, nie?) */
 	static const int FPS = 60;
 	static const int MSECONDS_FOR_FRAME = ceil(1000.0 / FPS);
 
