@@ -6,7 +6,7 @@ int Gameplay::sumOfSelected() const {
         if (n.isSelected()) {
             ret += n.getValue();
         }
-    }
+    }//dupa hehe
     return ret;
 }
 
