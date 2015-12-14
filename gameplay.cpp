@@ -22,8 +22,10 @@ int Gameplay::findCorrectSum() {
     }
 }
 
-void Gameplay::pushNumber(const Number &n) {
-    numbers.push_back(n);
+void Gameplay::pushNumber(const Number &n, bool pushToVec = true) {
+    if (pushToVec) {
+        numbers.push_back(n);
+    }
 
     for (int i = sumOfNumbers; i >= 0; i--) {
         reachable[i + n.getValue()] = true;
@@ -36,14 +38,14 @@ void Gameplay::initializeNumbers() {
     std::fill(reachable, reachable + MAX_SUM, false);
     sumOfNumbers = 0;
 
-    for (Number &n : numbers) {
-        pushNumber(n);
+    for (Number n : numbers) {
+        pushNumber(n, false);
     }
 }
 
 void Gameplay::deleteSelectedNumbers() {
     QVector <Number> new_numbers;
-    for (Number &n : numbers) {
+    for (Number n : numbers) {
         if (!n.isSelected()) {
             new_numbers.push_back(n);
         }

@@ -28,7 +28,7 @@ private:
 
     int sumOfSelected() const;
 	int findCorrectSum();
-	void pushNumber(const Number &n);
+    void pushNumber(const Number &n, bool pushToVec);
 	void initializeNumbers();
 	void deleteSelectedNumbers();
 	void setNextNumberTimer();
