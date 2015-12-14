@@ -18,6 +18,7 @@ protected:
 	virtual void Initialize();
 
 public:
+    virtual int getLevelNumber() const;
 	virtual Number nextNumber();
 	virtual int timeTillNextNumber();
 	Level();

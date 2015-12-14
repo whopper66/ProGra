@@ -30,3 +30,7 @@ int Level1::timeTillNextNumber() {
 
     return 250;
 }
+
+int Level1::getLevelNumber() const {
+    return 1;
+}

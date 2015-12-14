@@ -10,6 +10,7 @@ private:
     void Initialize();
 
 public:
+    int getLevelNumber() const;
     Level2();
     Number nextNumber();
     int timeTillNextNumber();

@@ -31,4 +31,6 @@ int Level2::timeTillNextNumber() {
     return 250;
 }
 
-
+int Level2::getLevelNumber() const {
+    return 2;
+}

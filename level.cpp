@@ -16,6 +16,10 @@ int Level::timeTillNextNumber() {
 	return 250;
 }
 
+int Level::getLevelNumber() const {
+    return 0;
+}
+
 bool Level::completed() {
     return false;
 }
