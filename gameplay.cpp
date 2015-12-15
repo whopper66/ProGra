@@ -127,9 +127,12 @@ Number Gameplay::getNthNumber(int n) const {
 	return numbers[n];
 }
 
-void Gameplay::handleUserClick(const QPointF &pos) {
+#define distance(A,B) sqrt(((A).x()-(B).x())*((A).x()-(B).x())\
+    +((A).y()-(B).y())*((A).y()-(B).y()))
+
+void Gameplay::handleUserClick(const QPointF &pos, const qreal CLICK_RADIUS) {
     for (Number &n : numbers) {
-        if ((n.getPosition() - pos).manhattanLength() < 0.03f) {
+        if (distance(n.getPosition(), pos) < CLICK_RADIUS) {
             /* TODO: ładniejsze wykrywanie kliknięcia
              * w numerek */
             n.toggleSelected();

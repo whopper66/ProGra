@@ -46,7 +46,7 @@ public:
 
 	int getNumbersCount() const;
 	Number getNthNumber(int n) const;
-	void handleUserClick(const QPointF &pos);
+    void handleUserClick(const QPointF &pos, const qreal CLICK_RADIUS);
 };
 
 #endif // GAMEPLAY_H

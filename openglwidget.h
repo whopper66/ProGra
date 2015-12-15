@@ -11,6 +11,8 @@
 
 #include <QDebug>
 
+const qreal CLICK_RADIUS = 0.03f;
+
 class OpenGLWidget : public QOpenGLWidget {
 	Q_OBJECT
 
@@ -25,6 +27,8 @@ private:
 
 	QPointF squeezeCoords(const QPoint &point) const;
 	/* i odwrotnie */
+
+    int stretchRadius(const qreal r) const;
 
 	void paintNumber(const Number &n);
 
