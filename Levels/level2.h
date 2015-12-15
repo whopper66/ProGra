@@ -14,6 +14,7 @@ public:
     Level2();
     Number nextNumber();
     int timeTillNextNumber();
+    bool completed(int numbersLeft) const;
 };
 
 #endif // LEVEL2_H

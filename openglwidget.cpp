@@ -52,6 +52,5 @@ OpenGLWidget::~OpenGLWidget() {
 
 void OpenGLWidget::mousePressEvent(QMouseEvent *event) {
 	QPointF coords = squeezeCoords(event->pos());
-	qDebug() << coords;
 	gameplay->handleUserClick(coords);
 }

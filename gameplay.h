@@ -2,6 +2,7 @@
 #define GAMEPLAY_H
 
 #include "Levels/level1.h"
+#include "Levels/level2.h"
 
 #include <QTimer>
 #include <QVector>
@@ -32,6 +33,8 @@ private:
 	void initializeNumbers();
 	void deleteSelectedNumbers();
 	void setNextNumberTimer();
+    void iterateLevel();
+    void prepare();
 
 private slots:
     void addNumber();

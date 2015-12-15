@@ -24,7 +24,8 @@ public:
 	Level();
 	virtual ~Level();
 
-    virtual bool completed();
+    virtual bool completed() const;
+    virtual bool completed(int numbersLeft) const;
     /* UWAGA: można dodawać metody completed()
      * różnymi zbiorami argumentów, a następnie
      * w kodzie sprawdzać je po kolei */

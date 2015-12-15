@@ -6,7 +6,7 @@ int Gameplay::sumOfSelected() const {
         if (n.isSelected()) {
             ret += n.getValue();
         }
-    }//dupa hehe
+    }
     return ret;
 }
 
@@ -27,8 +27,9 @@ void Gameplay::pushNumber(const Number &n, bool pushToVec = true) {
         numbers.push_back(n);
     }
 
-    for (int i = sumOfNumbers; i >= 0; i--) {
-        reachable[i + n.getValue()] = true;
+    for (int i = sumOfNumbers; i >= 0; i--)
+        if (reachable[i]) {
+            reachable[i + n.getValue()] = true;
     }
     sumOfNumbers += n.getValue();
     correctSum = findCorrectSum();
@@ -36,6 +37,7 @@ void Gameplay::pushNumber(const Number &n, bool pushToVec = true) {
 
 void Gameplay::initializeNumbers() {
     std::fill(reachable, reachable + MAX_SUM, false);
+    reachable[0] = true;
     sumOfNumbers = 0;
 
     for (Number n : numbers) {
@@ -77,6 +79,29 @@ void Gameplay::update() {
     if (sumOfSelected() == correctSum) {
         deleteSelectedNumbers();
     }
+
+    if (currentLevel->completed() ||
+        currentLevel->completed(numbers.size())) {
+        iterateLevel();
+    }
+}
+
+void Gameplay::prepare() {
+    sumOfNumbers = 0;
+    correctSum = -1;
+    std::fill(reachable, reachable + MAX_SUM, false);
+    reachable[0] = true;
+    numbers = QVector<Number>();
+
+    setNextNumberTimer();
+}
+
+void Gameplay::iterateLevel() {
+    if (currentLevel->getLevelNumber() == 1) {
+        currentLevel = new Level2();
+        prepare();
+        return;
+    }
 }
 
 Gameplay::Gameplay() :
@@ -85,10 +110,8 @@ Gameplay::Gameplay() :
 
     reachable = new bool[MAX_SUM];
     currentLevel = new Level1();
-    numbers = QVector<Number>();
-
-    setNextNumberTimer();
     connect(&nextNumberTimer, SIGNAL(timeout()), this, SLOT(addNumber()));
+    prepare();
 }
 
 Gameplay::~Gameplay() {
@@ -106,7 +129,7 @@ Number Gameplay::getNthNumber(int n) const {
 
 void Gameplay::handleUserClick(const QPointF &pos) {
     for (Number &n : numbers) {
-        if ((n.getPosition() - pos).manhattanLength() < 0.1f) {
+        if ((n.getPosition() - pos).manhattanLength() < 0.03f) {
             /* TODO: ładniejsze wykrywanie kliknięcia
              * w numerek */
             n.toggleSelected();

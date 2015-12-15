@@ -20,7 +20,11 @@ int Level::getLevelNumber() const {
     return 0;
 }
 
-bool Level::completed() {
+bool Level::completed() const {
+    return false;
+}
+
+bool Level::completed(int numbersLeft) const {
     return false;
 }
 

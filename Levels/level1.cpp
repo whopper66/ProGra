@@ -5,15 +5,16 @@ Level1::Level1() : Level() {
 }
 
 void Level1::Initialize() {
-    queue.push_back(Number(10, QPointF(0.3f, 0.3f)));
-    queue.push_back(Number(17, QPointF(0.3f, 0.5f)));
-    queue.push_back(Number(15, QPointF(0.3f, 0.7f)));
-    queue.push_back(Number(12, QPointF(0.5f, 0.3f)));
-    queue.push_back(Number(12, QPointF(0.5f, 0.5f)));
-    queue.push_back(Number(14, QPointF(0.5f, 0.7f)));
-    queue.push_back(Number(16, QPointF(0.7f, 0.3f)));
-    queue.push_back(Number(19, QPointF(0.7f, 0.5f)));
-    queue.push_back(Number(20, QPointF(0.7f, 0.7f)));
+    queue.push_back(Number(1, QPointF(0.1f, 0.1f)));
+    queue.push_back(Number(2, QPointF(0.2f, 0.2f)));
+    queue.push_back(Number(5, QPointF(0.3f, 0.3f)));
+    queue.push_back(Number(8, QPointF(0.4f, 0.4f)));
+    queue.push_back(Number(16, QPointF(0.5f, 0.5f)));
+    queue.push_back(Number(32, QPointF(0.6f, 0.6f)));
+    queue.push_back(Number(64, QPointF(0.7f, 0.7f)));
+    queue.push_back(Number(128, QPointF(0.8f, 0.8f)));
+    queue.push_back(Number(256, QPointF(0.9f, 0.9f)));
+
 }
 
 Number Level1::nextNumber() {
@@ -24,7 +25,7 @@ Number Level1::nextNumber() {
 
 int Level1::timeTillNextNumber() {
     /* -1 for infinity */
-    if (queue.empty()) {
+    if (queue.isEmpty()) {
         return -1;
     }
 
@@ -33,4 +34,8 @@ int Level1::timeTillNextNumber() {
 
 int Level1::getLevelNumber() const {
     return 1;
+}
+
+bool Level1::completed(int numbersLeft) const {
+    return numbersLeft == 0;
 }
