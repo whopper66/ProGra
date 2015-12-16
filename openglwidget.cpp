@@ -49,6 +49,8 @@ void OpenGLWidget::paintTimeBar() {
         return;
     }
 
+    painter.setPen(Style::timeBarColor);
+    painter.setBrush(Style::timeBarBgColor);
     painter.drawRect(100, 10, 100, 10);
 
     painter.setBrush(Style::timeBarFillColor);

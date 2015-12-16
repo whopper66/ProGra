@@ -9,7 +9,8 @@ namespace Style {
 	const QColor numberColor = Qt::white;
 	const QColor selectedNumberColor = Qt::red;
     const QColor circleColor = QColor(160, 255, 255, 90);
-    const QColor timeBarColor = QColor(0, 0, 0, 0);
+    const QColor timeBarColor = Qt::white;
+    const QColor timeBarBgColor = Qt::black;
     const QColor timeBarFillColor = Qt::red;
 }
 
