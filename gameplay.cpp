@@ -112,7 +112,6 @@ void Gameplay::iterateLevel() {
 void Gameplay::initialize() {
     reachable = new bool[MAX_SUM];
     currentLevel = new Level1();
-    updateTimer.stop();
     disconnect(&nextNumberTimer, SIGNAL(timeout()), this, SLOT(addNumber()));
     disconnect(&levelCountdownTimer, SIGNAL(timeout()), this, SLOT(lose()));
     connect(&nextNumberTimer, SIGNAL(timeout()), this, SLOT(addNumber()));

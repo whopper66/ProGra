@@ -5,9 +5,9 @@ Level3::Level3() : Level() {
 }
 
 void Level3::Initialize() {
-    for (qreal i = 0.1f; i <= 0.9f; i += 0.1f) {
-        for (qreal j = 0.1f; j <= 0.9f; j += 0.1f) {
-            queue.push_back(Number(i+j, QPointF(i, j)));
+    for (qreal i = 0.1f; i <= 0.95f; i += 0.1f) {
+        for (qreal j = 0.1f; j <= 0.95f; j += 0.1f) {
+            queue.push_back(Number(10*(i+j), QPointF(i, j)));
         }
     }
 }

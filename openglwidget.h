@@ -5,6 +5,7 @@
 #include "style.h"
 
 #include <QOpenGLWidget>
+#include <QOpenGLContext>
 #include <QPainter>
 #include <QFontDatabase>
 #include <QMouseEvent>
@@ -19,7 +20,7 @@ class OpenGLWidget : public QOpenGLWidget {
 private:
 	QTimer paintTimer;
 	QPainter painter;
-	Gameplay *gameplay;
+    Gameplay *gameplay;
 
 	QPoint stretchCoords(const QPointF &point) const;
 	/* zamienia współrzędne z zakresu [0..1] na
@@ -30,6 +31,7 @@ private:
 
     int stretchRadius(const qreal r) const;
 
+    void clearBg();
 	void paintNumber(const Number &n);
     void paintTimeBar();
 

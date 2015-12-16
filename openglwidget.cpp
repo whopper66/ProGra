@@ -13,6 +13,8 @@ OpenGLWidget::OpenGLWidget(QWidget * parent, Qt::WindowFlags) :
 	connect(&paintTimer, SIGNAL(timeout()), this, SLOT(paintGL()));
 	connect(&paintTimer, SIGNAL(timeout()), this, SLOT(update()));
 
+    qDebug() << QFontDatabase::addApplicationFont(":/Fonts/Fonts/ARCADECLASSIC.TTF");
+
 	gameplay = new Gameplay();
 }
 
@@ -57,15 +59,24 @@ void OpenGLWidget::paintTimeBar() {
     painter.drawRect(100, 10, (100 * gameplay->getTimeLeft()) / gameplay->getStartTime(), 10);
 }
 
+void OpenGLWidget::clearBg() {
+    painter.setBrush(Style::bgColor);
+    painter.drawRect(0, 0, this->width(), this->height());
+}
+
 void OpenGLWidget::paintGL() {
 	if (!painter.isActive()) {
 		painter.begin(this);
 	}
+    painter.setFont(QFont("ArcadeClassic", 20));
 
+    glClearColor(1, 1, 1, 1);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    clearBg();
 	for (int i = 0; i < gameplay->getNumbersCount(); i++) {
 		paintNumber(gameplay->getNthNumber(i));
 	}
-
     paintTimeBar();
 
 	painter.end();
