@@ -3,6 +3,7 @@
 
 #include "Levels/level1.h"
 #include "Levels/level2.h"
+#include "Levels/level3.h"
 
 #include <QTimer>
 #include <QVector>

@@ -13,7 +13,8 @@ SOURCES += main.cpp\
     number.cpp \
     level.cpp \
     Levels/level1.cpp \
-    Levels/level2.cpp
+    Levels/level2.cpp \
+    Levels/level3.cpp
 
 HEADERS  += mainwindow.h \
     openglwidget.h \
@@ -22,7 +23,8 @@ HEADERS  += mainwindow.h \
     level.h \
     Levels/level1.h \
     style.h \
-    Levels/level2.h
+    Levels/level2.h \
+    Levels/level3.h
 
 FORMS    += \
     mainwindow.ui

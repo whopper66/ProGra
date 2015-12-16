@@ -31,10 +31,10 @@ QPointF OpenGLWidget::squeezeCoords(const QPoint &point) const {
 }
 
 void OpenGLWidget::paintNumber(const Number &n) {
-	painter.setPen(n.isSelected() ? Style::selectedNumberColor : Style::numberColor);
+    painter.setPen(n.isSelected() ?
+                       Style::selectedNumberColor : Style::numberColor);
 
     int radius = stretchRadius(CLICK_RADIUS);
-
 	QPoint position = stretchCoords(n.getPosition());
 
     painter.setBrush(Style::circleColor);
