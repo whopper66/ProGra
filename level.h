@@ -20,9 +20,13 @@ protected:
 public:
     virtual int getLevelNumber() const;
 	virtual Number nextNumber();
-	virtual int timeTillNextNumber();
+    virtual int timeTillNextNumber(); /* -1 for infinity */
 	Level();
 	virtual ~Level();
+
+    virtual bool isTimed() const;
+    virtual int getTime() const;
+    /* -1 for infinity */
 
     virtual bool completed() const;
     virtual bool completed(int numbersLeft) const;

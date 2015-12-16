@@ -31,6 +31,7 @@ private:
     int stretchRadius(const qreal r) const;
 
 	void paintNumber(const Number &n);
+    void paintTimeBar();
 
 private slots:
 	void paintGL();

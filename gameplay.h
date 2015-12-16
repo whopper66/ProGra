@@ -17,6 +17,7 @@ class Gameplay : private QObject {
 private:
 	QTimer updateTimer;
 	QTimer nextNumberTimer;
+    QTimer levelCountdownTimer;
 
 	QVector<Number> numbers;
 	int sumOfNumbers;
@@ -29,24 +30,30 @@ private:
 
     int sumOfSelected() const;
 	int findCorrectSum();
+    void initialize();
     void pushNumber(const Number &n, bool pushToVec);
 	void initializeNumbers();
 	void deleteSelectedNumbers();
 	void setNextNumberTimer();
+    void setLevelCountdownTimer();
     void iterateLevel();
     void prepare();
 
 private slots:
     void addNumber();
     void update();
+    void lose();
 
 public:
 	Gameplay();
 	~Gameplay();
 
 	int getNumbersCount() const;
+    int getStartTime() const;
+    int getTimeLeft() const;
 	Number getNthNumber(int n) const;
     void handleUserClick(const QPointF &pos, const qreal CLICK_RADIUS);
+    bool isTimed() const;
 };
 
 #endif // GAMEPLAY_H

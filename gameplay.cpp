@@ -58,6 +58,8 @@ void Gameplay::deleteSelectedNumbers() {
 }
 
 void Gameplay::setNextNumberTimer() {
+    nextNumberTimer.stop();
+
     int interval = currentLevel->timeTillNextNumber();
 
     if (interval != -1) {
@@ -94,6 +96,15 @@ void Gameplay::prepare() {
     numbers = QVector<Number>();
 
     setNextNumberTimer();
+    setLevelCountdownTimer();
+}
+
+void Gameplay::setLevelCountdownTimer() {
+    levelCountdownTimer.stop();
+
+    if (currentLevel->isTimed()) {
+        levelCountdownTimer.start(currentLevel->getTime());
+    }
 }
 
 void Gameplay::iterateLevel() {
@@ -104,14 +115,27 @@ void Gameplay::iterateLevel() {
     }
 }
 
-Gameplay::Gameplay() :
-    sumOfNumbers(0),
-    correctSum(-1) {
-
+void Gameplay::initialize() {
     reachable = new bool[MAX_SUM];
     currentLevel = new Level1();
+
+    updateTimer.stop();
+
+    disconnect(&nextNumberTimer, SIGNAL(timeout()), this, SLOT(addNumber()));
+    disconnect(&levelCountdownTimer, SIGNAL(timeout()), this, SLOT(lose()));
     connect(&nextNumberTimer, SIGNAL(timeout()), this, SLOT(addNumber()));
+    connect(&levelCountdownTimer, SIGNAL(timeout()), this, SLOT(lose()));
+
     prepare();
+}
+
+Gameplay::Gameplay() {
+
+    initialize();
+}
+
+void Gameplay::lose() {
+    initialize();
 }
 
 Gameplay::~Gameplay() {
@@ -121,6 +145,18 @@ Gameplay::~Gameplay() {
 
 int Gameplay::getNumbersCount() const {
 	return numbers.size();
+}
+
+bool Gameplay::isTimed() const {
+    return currentLevel->isTimed();
+}
+
+int Gameplay::getStartTime() const {
+    return currentLevel->getTime();
+}
+
+int Gameplay::getTimeLeft() const {
+    return levelCountdownTimer.remainingTime();
 }
 
 Number Gameplay::getNthNumber(int n) const {

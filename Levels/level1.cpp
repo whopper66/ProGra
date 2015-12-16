@@ -39,3 +39,11 @@ int Level1::getLevelNumber() const {
 bool Level1::completed(int numbersLeft) const {
     return numbersLeft == 0;
 }
+
+bool Level1::isTimed() const {
+    return true;
+}
+
+int Level1::getTime() const {
+    return 10000; //MILISECONDS
+}

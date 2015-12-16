@@ -37,10 +37,22 @@ void OpenGLWidget::paintNumber(const Number &n) {
 
 	QPoint position = stretchCoords(n.getPosition());
 
+    painter.setBrush(Style::circleColor);
     painter.drawEllipse(position, radius, radius);
 
     QString text = QString::number(n.getValue());
 	painter.drawText(position, text);
+}
+
+void OpenGLWidget::paintTimeBar() {
+    if (!gameplay->isTimed()) {
+        return;
+    }
+
+    painter.drawRect(100, 10, 100, 10);
+
+    painter.setBrush(Style::timeBarFillColor);
+    painter.drawRect(100, 10, (100 * gameplay->getTimeLeft()) / gameplay->getStartTime(), 10);
 }
 
 void OpenGLWidget::paintGL() {
@@ -51,6 +63,8 @@ void OpenGLWidget::paintGL() {
 	for (int i = 0; i < gameplay->getNumbersCount(); i++) {
 		paintNumber(gameplay->getNthNumber(i));
 	}
+
+    paintTimeBar();
 
 	painter.end();
 }

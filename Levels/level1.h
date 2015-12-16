@@ -15,6 +15,8 @@ public:
 	Number nextNumber();
 	int timeTillNextNumber();
     bool completed(int numbersLeft) const;
+    bool isTimed() const;
+    int getTime() const;
 };
 
 #endif // LEVEL1_H

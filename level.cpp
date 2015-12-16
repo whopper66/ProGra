@@ -28,6 +28,14 @@ bool Level::completed(int numbersLeft) const {
     return false;
 }
 
+bool Level::isTimed() const {
+    return false;
+}
+
+int Level::getTime() const {
+    return -1;
+}
+
 Level::~Level() {
 
 }
