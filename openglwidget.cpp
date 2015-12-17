@@ -14,7 +14,7 @@ OpenGLWidget::OpenGLWidget(QWidget * parent, Qt::WindowFlags) :
 	connect(&paintTimer, SIGNAL(timeout()), this, SLOT(update()));
 
 	QFontDatabase::addApplicationFont(":/Fonts/Fonts/ARCADECLASSIC.TTF");
-
+	numberFont = QFont("ArcadeClassic", 20);
 	gameplay = new Gameplay();
 }
 
@@ -40,9 +40,12 @@ void OpenGLWidget::paintNumber(const Number &n) {
 	QPoint position = stretchCoords(n.getPosition());
 
     painter.setBrush(Style::circleColor);
-    painter.drawEllipse(position, radius, radius);
+	painter.drawEllipse(position, radius, radius);
 
     QString text = QString::number(n.getValue());
+	QFontMetrics numberFontMetrics(numberFont);
+	position.setX(position.x()-numberFontMetrics.width(text)/2);
+	position.setY(position.y()+(numberFontMetrics.ascent()-numberFontMetrics.descent())/2);
 	painter.drawText(position, text);
 }
 
@@ -68,7 +71,7 @@ void OpenGLWidget::paintGL() {
 	if (!painter.isActive()) {
 		painter.begin(this);
 	}
-    painter.setFont(QFont("ArcadeClassic", 20));
+	painter.setFont(numberFont);
 
     glClearColor(1, 1, 1, 1);
     glClear(GL_COLOR_BUFFER_BIT);

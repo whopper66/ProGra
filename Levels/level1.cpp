@@ -45,5 +45,5 @@ bool Level1::isTimed() const {
 }
 
 int Level1::getTime() const {
-    return 10000; //MILISECONDS
+	return 15000; //MILISECONDS
 }

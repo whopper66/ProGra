@@ -4,12 +4,12 @@
 #include "gameplay.h"
 #include "style.h"
 
-#include <QOpenGLWidget>
 #include <QOpenGLContext>
-#include <QPainter>
 #include <QFontDatabase>
+#include <QOpenGLWidget>
+#include <QFontMetrics>
 #include <QMouseEvent>
-
+#include <QPainter>
 #include <QDebug>
 
 const qreal CLICK_RADIUS = 0.03f;
@@ -20,6 +20,7 @@ class OpenGLWidget : public QOpenGLWidget {
 private:
 	QTimer paintTimer;
 	QPainter painter;
+	QFont numberFont;
     Gameplay *gameplay;
 
 	QPoint stretchCoords(const QPointF &point) const;
