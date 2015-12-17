@@ -19,4 +19,4 @@ public:
     int getTime() const;
 };
 
-#endif // LEVEL2_H
+#endif // LEVEL3_H
