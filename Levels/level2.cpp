@@ -36,7 +36,7 @@ int Level2::getLevelNumber() const {
 }
 
 bool Level2::completed(int numbersLeft) const {
-    return numbersLeft == 0;
+	return queue.isEmpty() && numbersLeft == 0;
 }
 
 bool Level2::isTimed() const {

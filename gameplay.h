@@ -37,7 +37,7 @@ private:
 	void deleteSelectedNumbers();
 	void setNextNumberTimer();
     void setLevelCountdownTimer();
-    void iterateLevel();
+	//void iterateLevel();
     void prepare();
 
 private slots:
@@ -55,6 +55,9 @@ public:
 	Number getNthNumber(int n) const;
     void handleUserClick(const QPointF &pos, const qreal CLICK_RADIUS);
     bool isTimed() const;
+	void iterateLevel();
+	//void setLevel(int);
+	//const Level getLevel() const;
 };
 
 #endif // GAMEPLAY_H

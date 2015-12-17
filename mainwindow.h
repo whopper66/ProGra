@@ -16,9 +16,13 @@ class MainWindow : public QMainWindow {
 private:
 	Ui::MainWindow *ui;
 	OpenGLWidget *openGLWidget;
+	Gameplay *gameplay;
+
+private slots:
+	void handleMenuButton();
 
 protected:
-	void resizeEvent(QResizeEvent *event);
+	void resizeEvent(QResizeEvent *);
 	void mousePressEvent(QMouseEvent *event);
 
 public:

@@ -24,7 +24,10 @@ int Level3::timeTillNextNumber() {
         return -1;
     }
 
-    return 250;
+	if(queue.size()%9 || queue.size() == 81)
+		return 100;
+	else
+		return 10000;
 }
 
 int Level3::getLevelNumber() const {
@@ -32,7 +35,7 @@ int Level3::getLevelNumber() const {
 }
 
 bool Level3::completed(int numbersLeft) const {
-    return numbersLeft == 0;
+	return queue.isEmpty() && numbersLeft == 0;
 }
 
 bool Level3::isTimed() const {
@@ -40,5 +43,5 @@ bool Level3::isTimed() const {
 }
 
 int Level3::getTime() const {
-    return 80000; //MILISECONDS
+	return 120000; //MILISECONDS
 }

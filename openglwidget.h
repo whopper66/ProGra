@@ -43,6 +43,7 @@ public:
 	~OpenGLWidget();
 
 	void mousePressEvent(QMouseEvent *event);
+	Gameplay* getGameplay() const;
 };
 
 #endif // OPENGLWIDGET_H

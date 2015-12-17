@@ -13,7 +13,7 @@ OpenGLWidget::OpenGLWidget(QWidget * parent, Qt::WindowFlags) :
 	connect(&paintTimer, SIGNAL(timeout()), this, SLOT(paintGL()));
 	connect(&paintTimer, SIGNAL(timeout()), this, SLOT(update()));
 
-    qDebug() << QFontDatabase::addApplicationFont(":/Fonts/Fonts/ARCADECLASSIC.TTF");
+	QFontDatabase::addApplicationFont(":/Fonts/Fonts/ARCADECLASSIC.TTF");
 
 	gameplay = new Gameplay();
 }
@@ -89,4 +89,8 @@ OpenGLWidget::~OpenGLWidget() {
 void OpenGLWidget::mousePressEvent(QMouseEvent *event) {
 	QPointF coords = squeezeCoords(event->pos());
     gameplay->handleUserClick(coords, CLICK_RADIUS);
+}
+
+Gameplay* OpenGLWidget::getGameplay() const {
+	return gameplay;
 }

@@ -105,6 +105,9 @@ void Gameplay::iterateLevel() {
     case 2:
         currentLevel = new Level3();
         break;
+	case 3:
+		currentLevel = new Level1();
+		break;
     };
     prepare();
 }
@@ -128,7 +131,7 @@ void Gameplay::lose() {
 }
 
 Gameplay::~Gameplay() {
-    delete reachable;
+	delete[] reachable;
     delete currentLevel;
 }
 
