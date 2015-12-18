@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>Fonts/ARCADECLASSIC.TTF</file>
         <file>Graphics/clouds.gif</file>
+        <file>Graphics/single_cloud.gif</file>
     </qresource>
 </RCC>

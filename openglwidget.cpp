@@ -16,6 +16,7 @@ OpenGLWidget::OpenGLWidget(QWidget * parent, Qt::WindowFlags) :
     QFontDatabase::addApplicationFont(":/Fonts/ARCADECLASSIC.TTF");
 	numberFont = QFont("ArcadeClassic", 20);
     cloudsImage = QImage(":/Graphics/clouds.gif");
+    singleCloudImage = QImage(":/Graphics/single_cloud.gif");
 
 	gameplay = new Gameplay();
 }
@@ -42,7 +43,8 @@ void OpenGLWidget::paintNumber(const Number &n) {
 	QPoint position = stretchCoords(n.getPosition());
 
     painter.setBrush(Style::circleColor);
-	painter.drawEllipse(position, radius, radius);
+    //painter.drawEllipse(position, radius, radius);
+    painter.drawImage(QRect(position.x()-radius, position.y()-radius, 2*radius, 2*radius), singleCloudImage);
 
     QString text = QString::number(n.getValue());
 	QFontMetrics numberFontMetrics(numberFont);

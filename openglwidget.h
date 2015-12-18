@@ -21,6 +21,7 @@ private:
 	QTimer paintTimer;
 	QPainter painter;
 	QFont numberFont;
+    QImage singleCloudImage;
     QImage cloudsImage;
     Gameplay *gameplay;
 

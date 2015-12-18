@@ -6,7 +6,7 @@
 #include <QBrush>
 
 namespace Style {
-	const QColor numberColor = Qt::white;
+    const QColor numberColor = Qt::black;
 	const QColor selectedNumberColor = Qt::red;
     const QColor circleColor = QColor(160, 255, 255, 90);
     const QColor timeBarColor = Qt::white;
