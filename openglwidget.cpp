@@ -15,6 +15,8 @@ OpenGLWidget::OpenGLWidget(QWidget * parent, Qt::WindowFlags) :
 
     QFontDatabase::addApplicationFont(":/Fonts/ARCADECLASSIC.TTF");
 	numberFont = QFont("ArcadeClassic", 20);
+    cloudsImage = QImage(":/Graphics/clouds.gif");
+
 	gameplay = new Gameplay();
 }
 
@@ -62,9 +64,11 @@ void OpenGLWidget::paintTimeBar() {
     painter.drawRect(100, 10, (100 * gameplay->getTimeLeft()) / gameplay->getStartTime(), 10);
 }
 
-void OpenGLWidget::clearBg() {
+void OpenGLWidget::paintBg() {
     painter.setBrush(Style::bgColor);
     painter.drawRect(0., 0, this->width(), this->height());
+
+    painter.drawImage(0, 0, cloudsImage);
 }
 
 void OpenGLWidget::paintGL() {
@@ -73,15 +77,11 @@ void OpenGLWidget::paintGL() {
 	}
 	painter.setFont(numberFont);
 
-    clearBg();
+    paintBg();
 	for (int i = 0; i < gameplay->getNumbersCount(); i++) {
 		paintNumber(gameplay->getNthNumber(i));
 	}
     paintTimeBar();
-
-    cloudsImage = QImage(":/Graphics/clouds.gif");
-    painter.drawImage(0, 0, cloudsImage);
-
 
 	painter.end();
 }

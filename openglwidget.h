@@ -33,7 +33,7 @@ private:
 
     int stretchRadius(const qreal r) const;
 
-    void clearBg();
+    void paintBg();
 	void paintNumber(const Number &n);
     void paintTimeBar();
 
