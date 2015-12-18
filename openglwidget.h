@@ -21,6 +21,7 @@ private:
 	QTimer paintTimer;
 	QPainter painter;
 	QFont numberFont;
+    QImage cloudsImage;
     Gameplay *gameplay;
 
 	QPoint stretchCoords(const QPointF &point) const;

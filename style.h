@@ -12,7 +12,7 @@ namespace Style {
     const QColor timeBarColor = Qt::white;
     const QColor timeBarBgColor = Qt::black;
     const QColor timeBarFillColor = Qt::red;
-	const QColor bgColor = Qt::black;
+    const QColor bgColor = Qt::blue;
 }
 
 #endif // STYLE_H

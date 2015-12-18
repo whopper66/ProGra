@@ -1,5 +1,6 @@
 <RCC>
-    <qresource prefix="/Fonts">
+    <qresource prefix="/">
         <file>Fonts/ARCADECLASSIC.TTF</file>
+        <file>Graphics/clouds.gif</file>
     </qresource>
 </RCC>

@@ -13,7 +13,7 @@ OpenGLWidget::OpenGLWidget(QWidget * parent, Qt::WindowFlags) :
 	connect(&paintTimer, SIGNAL(timeout()), this, SLOT(paintGL()));
 	connect(&paintTimer, SIGNAL(timeout()), this, SLOT(update()));
 
-	QFontDatabase::addApplicationFont(":/Fonts/Fonts/ARCADECLASSIC.TTF");
+    QFontDatabase::addApplicationFont(":/Fonts/ARCADECLASSIC.TTF");
 	numberFont = QFont("ArcadeClassic", 20);
 	gameplay = new Gameplay();
 }
@@ -64,7 +64,7 @@ void OpenGLWidget::paintTimeBar() {
 
 void OpenGLWidget::clearBg() {
     painter.setBrush(Style::bgColor);
-    painter.drawRect(0, 0, this->width(), this->height());
+    painter.drawRect(0., 0, this->width(), this->height());
 }
 
 void OpenGLWidget::paintGL() {
@@ -73,14 +73,15 @@ void OpenGLWidget::paintGL() {
 	}
 	painter.setFont(numberFont);
 
-    glClearColor(1, 1, 1, 1);
-    glClear(GL_COLOR_BUFFER_BIT);
-
     clearBg();
 	for (int i = 0; i < gameplay->getNumbersCount(); i++) {
 		paintNumber(gameplay->getNthNumber(i));
 	}
     paintTimeBar();
+
+    cloudsImage = QImage(":/Graphics/clouds.gif");
+    painter.drawImage(0, 0, cloudsImage);
+
 
 	painter.end();
 }
